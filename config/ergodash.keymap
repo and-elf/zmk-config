@@ -34,6 +34,13 @@
             bindings = <&kp LEFT_CONTROL &kp SPACE>;
             label = "AUTO_CPT";
         };
+
+        pass: pass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp N7 &kp G &kp W &kp R &kp U &kp LS(Z) &kp N1 &kp DQT>;
+            label = "PASS";
+        };
     };
 
     keymap {
@@ -77,7 +84,7 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */ /* FIXME boot and reset are not yet locale aware */
             bindings = <
-&kp F11  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &none                  &none           &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+&kp F11  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &none                  &pass           &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
 &kp F11  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5  &none                  &none           &kp TAB       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
 &trans   &arrow        &none         &none         &none         &none   &none                  &none           &auto_cpt     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
 &trans   &none         &sys_reset    &bootloader   &none         &none          &none   &none                   &none         &none         &none         &none         &none         &trans
